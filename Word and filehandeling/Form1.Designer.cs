@@ -32,6 +32,9 @@
             this.counter = new System.Windows.Forms.ToolStripStatusLabel();
             this.fileStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.wordCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.charCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.charCount2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.rowCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ny = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,9 +43,6 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.close = new System.Windows.Forms.ToolStripMenuItem();
             this.textArea = new System.Windows.Forms.RichTextBox();
-            this.charCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.charCount2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.rowCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,24 @@
             this.wordCount.Size = new System.Drawing.Size(47, 17);
             this.wordCount.Text = "Words: ";
             // 
+            // charCount
+            // 
+            this.charCount.Name = "charCount";
+            this.charCount.Size = new System.Drawing.Size(88, 17);
+            this.charCount.Text = "Chars w space: ";
+            // 
+            // charCount2
+            // 
+            this.charCount2.Name = "charCount2";
+            this.charCount2.Size = new System.Drawing.Size(100, 17);
+            this.charCount2.Text = "Chars w/o space: ";
+            // 
+            // rowCount
+            // 
+            this.rowCount.Name = "rowCount";
+            this.rowCount.Size = new System.Drawing.Size(41, 17);
+            this.rowCount.Text = "Rows: ";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -103,35 +121,35 @@
             // ny
             // 
             this.ny.Name = "ny";
-            this.ny.Size = new System.Drawing.Size(180, 22);
+            this.ny.Size = new System.Drawing.Size(129, 22);
             this.ny.Text = "Ny";
             this.ny.Click += new System.EventHandler(this.ny_Click);
             // 
             // open
             // 
             this.open.Name = "open";
-            this.open.Size = new System.Drawing.Size(180, 22);
+            this.open.Size = new System.Drawing.Size(129, 22);
             this.open.Text = "Öppna";
             this.open.Click += new System.EventHandler(this.open_Click);
             // 
             // save
             // 
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(180, 22);
+            this.save.Size = new System.Drawing.Size(129, 22);
             this.save.Text = "Spara";
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(129, 22);
             this.toolStripMenuItem5.Text = "Spara som";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.saveAs_Click);
             // 
             // close
             // 
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(180, 22);
+            this.close.Size = new System.Drawing.Size(129, 22);
             this.close.Text = "Stäng";
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
@@ -142,25 +160,8 @@
             this.textArea.Size = new System.Drawing.Size(776, 398);
             this.textArea.TabIndex = 2;
             this.textArea.Text = "";
+            this.textArea.WordWrap = false;
             this.textArea.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
-            // charCount
-            // 
-            this.charCount.Name = "charCount";
-            this.charCount.Size = new System.Drawing.Size(88, 17);
-            this.charCount.Text = "Chars w space: ";
-            // 
-            // charCount2
-            // 
-            this.charCount2.Name = "charCount2";
-            this.charCount2.Size = new System.Drawing.Size(100, 17);
-            this.charCount2.Text = "Chars w/o space: ";
-            // 
-            // rowCount
-            // 
-            this.rowCount.Name = "rowCount";
-            this.rowCount.Size = new System.Drawing.Size(41, 17);
-            this.rowCount.Text = "Rows: ";
             // 
             // Form1
             // 

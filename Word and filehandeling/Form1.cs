@@ -39,7 +39,11 @@ namespace Word_and_filehandeling
         {
             fileStatus.Text = "";
             charCount.Text = "Chars w space: " + textArea.Text.Length;
-            wordCount.Text = "Words: " + textArea.Text.Split(' ').Length;
+            charCount2.Text = "Chars w/0 space: " + ((textArea.Text.Length) - (textArea.Text.Split(' ').Length) +1);
+            char[] delim = new char[] { ' ', '\r', '\n' };
+            wordCount.Text = "Words: " + textArea.Text.Split(delim, StringSplitOptions.RemoveEmptyEntries).Length;
+            char[] delim2 = new char[] { '\r', '\n' };
+            rowCount.Text = "Rows: " + textArea.Text.Split(delim2).Length;
             markName();
 
 
@@ -102,23 +106,30 @@ namespace Word_and_filehandeling
                     this.Text = openfile.SafeFileName;
                 }
 
-                
-                else
+            }
+            else
+            {
+
+                DialogResult result = MessageBox.Show("Spara nuvarande fil?", "Spara fil?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
+                    saveFileDialog();
+                }
+                else if (result == DialogResult.No)
+                {
+                    OpenFileDialog openfile = new OpenFileDialog();
 
-                    DialogResult result = MessageBox.Show("Spara nuvarande fil?", "Spara fil?", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
+                    openfile.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                    if (openfile.ShowDialog() == DialogResult.OK)
                     {
-                        saveFileDialog();
+                        textArea.Text = File.ReadAllText(openfile.FileName);
+                        this.Text = openfile.SafeFileName;
                     }
-                    else if(result == DialogResult.No)
-                    {
-
-                    }
-
                 }
 
             }
+
+            
            
            
            
